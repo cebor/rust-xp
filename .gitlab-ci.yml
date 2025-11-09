@@ -1,0 +1,36 @@
+# GitLab CI/CD Pipeline for Rust Project
+
+stages:
+  - build
+  - test
+
+# Cache cargo dependencies for faster builds
+variables:
+  CARGO_HOME: $CI_PROJECT_DIR/.cargo
+
+cache:
+  paths:
+    - .cargo/
+    - target/
+
+# Build stage - compile the project
+build:
+  stage: build
+  image: rust:latest
+  script:
+    - rustc --version && cargo --version
+    - cargo build --release --verbose
+  artifacts:
+    paths:
+      - target/debug/
+      - target/release/
+    expire_in: 1 hour
+
+# Test stage - run all tests
+test:
+  stage: test
+  image: rust:latest
+  dependencies:
+    - build
+  script:
+    - cargo test --verbose
