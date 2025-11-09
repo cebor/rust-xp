@@ -8,7 +8,7 @@ This is a Rust learning project (`rust-xp_rs`) that implements classic algorithm
 
 ## Commit Message Guidelines
 
-Follow the Conventional Commits specification as detailed in `COMMIT_GUIDELINES.md`:
+Follow the Conventional Commits specification:
 
 ### Format
 ```
