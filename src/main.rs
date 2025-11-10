@@ -1,4 +1,4 @@
-use rust_xp_rs::{factorial_iterative, factorial_recursive, fibonacci_iterative, fibonacci_recursive};
+use rust_xp_rs::{factorial_iterative, factorial_recursive, fibonacci_iterative, fibonacci_recursive, is_prime};
 use std::env;
 use std::process;
 
@@ -6,6 +6,7 @@ fn print_usage(program: &str) {
     eprintln!("Usage:");
     eprintln!("  {} fac [--rec] <n>    Calculate factorial", program);
     eprintln!("  {} fib [--rec] <n>    Calculate fibonacci", program);
+    eprintln!("  {} prime <n>          Check if number is prime", program);
     eprintln!();
     eprintln!("Options:");
     eprintln!("  --rec                 Use recursive implementation (default: iterative)");
@@ -15,6 +16,7 @@ fn print_usage(program: &str) {
     eprintln!("  {} fac --rec 5        Calculate 5! recursively", program);
     eprintln!("  {} fib 10             Calculate fib(10) iteratively", program);
     eprintln!("  {} fib --rec 10       Calculate fib(10) recursively", program);
+    eprintln!("  {} prime 17           Check if 17 is prime", program);
 }
 
 fn main() {
@@ -54,20 +56,26 @@ fn main() {
     };
 
     // Execute the appropriate function
-    let result = match command.as_str() {
+    match command.as_str() {
         "fac" => {
-            if use_recursive {
+            let result = if use_recursive {
                 factorial_recursive(n)
             } else {
                 factorial_iterative(n)
-            }
+            };
+            println!("{}", result);
         }
         "fib" => {
-            if use_recursive {
+            let result = if use_recursive {
                 fibonacci_recursive(n)
             } else {
                 fibonacci_iterative(n)
-            }
+            };
+            println!("{}", result);
+        }
+        "prime" => {
+            let result = is_prime(n);
+            println!("{}", result);
         }
         _ => {
             eprintln!("Error: Unknown command '{}'", command);
@@ -76,6 +84,4 @@ fn main() {
             process::exit(1);
         }
     };
-
-    println!("{}", result);
 }

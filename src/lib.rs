@@ -179,6 +179,54 @@ pub fn fibonacci_recursive(n: u64) -> u64 {
     }
 }
 
+/// Checks if a number is prime.
+///
+/// A prime number is a natural number greater than 1 that has no positive
+/// divisors other than 1 and itself.
+///
+/// # Arguments
+///
+/// * `n` - The number to check for primality
+///
+/// # Returns
+///
+/// `true` if the number is prime, `false` otherwise
+///
+/// # Examples
+///
+/// ```
+/// use rust_xp_rs::is_prime;
+/// assert_eq!(is_prime(0), false);
+/// assert_eq!(is_prime(1), false);
+/// assert_eq!(is_prime(2), true);
+/// assert_eq!(is_prime(3), true);
+/// assert_eq!(is_prime(4), false);
+/// assert_eq!(is_prime(17), true);
+/// assert_eq!(is_prime(100), false);
+/// ```
+pub fn is_prime(n: u64) -> bool {
+    if n <= 1 {
+        return false;
+    }
+    if n <= 3 {
+        return true;
+    }
+    if n % 2 == 0 || n % 3 == 0 {
+        return false;
+    }
+
+    // Check divisibility up to sqrt(n) using 6k±1 optimization
+    let mut i = 5;
+    while i * i <= n {
+        if n % i == 0 || n % (i + 2) == 0 {
+            return false;
+        }
+        i += 6;
+    }
+
+    true
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -285,5 +333,49 @@ mod tests {
         assert_eq!(fibonacci_recursive(10), 55);
         assert_eq!(fibonacci_recursive(15), 610);
         assert_eq!(fibonacci_recursive(20), 6765);
+    }
+
+    #[test]
+    fn test_is_prime_edge_cases() {
+        assert_eq!(is_prime(0), false);
+        assert_eq!(is_prime(1), false);
+    }
+
+    #[test]
+    fn test_is_prime_small_primes() {
+        assert_eq!(is_prime(2), true);
+        assert_eq!(is_prime(3), true);
+        assert_eq!(is_prime(5), true);
+        assert_eq!(is_prime(7), true);
+        assert_eq!(is_prime(11), true);
+        assert_eq!(is_prime(13), true);
+    }
+
+    #[test]
+    fn test_is_prime_small_composites() {
+        assert_eq!(is_prime(4), false);
+        assert_eq!(is_prime(6), false);
+        assert_eq!(is_prime(8), false);
+        assert_eq!(is_prime(9), false);
+        assert_eq!(is_prime(10), false);
+        assert_eq!(is_prime(12), false);
+    }
+
+    #[test]
+    fn test_is_prime_larger_primes() {
+        assert_eq!(is_prime(17), true);
+        assert_eq!(is_prime(19), true);
+        assert_eq!(is_prime(23), true);
+        assert_eq!(is_prime(29), true);
+        assert_eq!(is_prime(97), true);
+        assert_eq!(is_prime(101), true);
+    }
+
+    #[test]
+    fn test_is_prime_larger_composites() {
+        assert_eq!(is_prime(100), false);
+        assert_eq!(is_prime(121), false);
+        assert_eq!(is_prime(144), false);
+        assert_eq!(is_prime(1000), false);
     }
 }
