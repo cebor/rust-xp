@@ -2,7 +2,7 @@
 
 ## Project Context
 
-This is a Rust learning project (`rust-xp_rs`) that implements classic algorithms:
+This is a Rust learning project (`rust-xp`) that implements classic algorithms:
 - Factorial (iterative and recursive)
 - Fibonacci (iterative and recursive)
 
@@ -14,7 +14,7 @@ This is a Rust learning project (`rust-xp_rs`) that implements classic algorithm
   - `fibonacci_iterative()`: Iterative Fibonacci implementation
   - `fibonacci_recursive()`: Recursive Fibonacci implementation
   - `parse_single_arg()`: CLI argument parser helper
-- `src/main.rs`: Main CLI interface (default binary: `rust-xp_rs`)
+- `src/main.rs`: Main CLI interface (default binary: `rust-xp`)
   - Unified command-line interface for all algorithms
   - Supports: `fac [--rec] <n>` and `fib [--rec] <n>`
 - `src/bin/`: Individual binary executables (legacy, kept for compatibility)
@@ -82,7 +82,7 @@ ci(gitlab): add test coverage stage
 - Include examples in doc comments (they run as doc tests)
 - Write tests for new functionality
 - Keep binary files minimal - put logic in the library
-- Use the library functions from `rust_xp_rs` crate in binaries
+- Use the library functions from `rust_xp` crate in binaries
 
 ## Testing
 

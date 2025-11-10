@@ -25,19 +25,19 @@ The unified command-line interface provides access to all algorithms:
 ```bash
 # Factorial (iterative by default)
 cargo run -- fac 5
-./target/release/rust-xp_rs fac 5
+./target/release/rust-xp fac 5
 
 # Factorial (recursive)
 cargo run -- fac --rec 5
-./target/release/rust-xp_rs fac --rec 5
+./target/release/rust-xp fac --rec 5
 
 # Fibonacci (iterative by default)
 cargo run -- fib 7
-./target/release/rust-xp_rs fib 7
+./target/release/rust-xp fib 7
 
 # Fibonacci (recursive)
 cargo run -- fib --rec 10
-./target/release/rust-xp_rs fib --rec 10
+./target/release/rust-xp fib --rec 10
 ```
 
 ### Individual Binaries

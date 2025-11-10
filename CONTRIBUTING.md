@@ -155,7 +155,7 @@ perf(fibonacci): optimize iterative calculation
 /// # Examples
 ///
 /// ```
-/// use rust_xp_rs::factorial_iterative;
+/// use rust_xp::factorial_iterative;
 /// assert_eq!(factorial_iterative(5), 120);
 /// ```
 pub fn factorial_iterative(n: u32) -> u128 {
