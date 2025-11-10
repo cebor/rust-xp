@@ -33,4 +33,4 @@ test:
   dependencies:
     - build
   script:
-    - cargo test --verbose
+    - cargo test --release --verbose
