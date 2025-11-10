@@ -8,10 +8,11 @@ stages:
 variables:
   CARGO_HOME: $CI_PROJECT_DIR/.cargo
 
-cache:
-  paths:
-    - .cargo/
-    - target/
+default:
+  cache:
+    paths:
+      - .cargo/
+      - target/
 
 # Build stage - compile the project
 build:
@@ -22,7 +23,6 @@ build:
     - cargo build --release --verbose
   artifacts:
     paths:
-      - target/debug/
       - target/release/
     expire_in: 1 hour
 
