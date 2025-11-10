@@ -101,6 +101,31 @@ cargo llvm-cov
 cargo llvm-cov --html
 ```
 
+### Benchmarking
+
+```bash
+# Run all benchmarks
+cargo bench
+
+# Run specific benchmark
+cargo bench factorial
+
+# Run benchmarks and save baseline
+cargo bench -- --save-baseline my-baseline
+
+# Compare against baseline
+cargo bench -- --baseline my-baseline
+```
+
+The benchmarks compare:
+- Iterative vs recursive implementations
+- Performance across different input sizes
+- Prime checking performance
+
+Results are saved in `target/criterion/` with detailed HTML reports.
+
+See [BENCHMARKING.md](BENCHMARKING.md) for detailed benchmarking guide.
+
 ### Documentation
 
 ```bash
@@ -150,6 +175,6 @@ This project is designed to:
 
 - [ ] Add more algorithms (sorting, searching)
 - [ ] Implement memoization for recursive Fibonacci
-- [ ] Add benchmarking
+- [x] Add benchmarking
 - [ ] Improve error handling and input validation
 - [ ] Add more comprehensive tests

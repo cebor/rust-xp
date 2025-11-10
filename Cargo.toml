@@ -5,3 +5,10 @@ edition = "2024"
 default-run = "rust-xp"
 
 [dependencies]
+
+[dev-dependencies]
+criterion = "0.5"
+
+[[bench]]
+name = "algorithms"
+harness = false

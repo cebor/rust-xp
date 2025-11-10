@@ -62,6 +62,30 @@ cargo llvm-cov
 cargo llvm-cov --html
 ```
 
+### Benchmarking
+
+```bash
+# Run all benchmarks
+cargo bench
+
+# Run specific benchmark
+cargo bench factorial
+
+# Run benchmarks and save baseline
+cargo bench -- --save-baseline my-baseline
+
+# Compare against baseline
+cargo bench -- --baseline my-baseline
+
+# View HTML reports
+open target/criterion/report/index.html
+```
+
+When adding new features, consider adding benchmarks to measure performance, especially when:
+- Implementing multiple approaches to the same problem
+- Optimizing existing code
+- Comparing iterative vs recursive solutions
+
 ## Commit Message Guidelines
 
 We follow the [Conventional Commits](https://www.conventionalcommits.org/) specification.
@@ -88,7 +112,7 @@ We follow the [Conventional Commits](https://www.conventionalcommits.org/) speci
 - `build`: Build system changes
 - `style`: Code style changes (formatting, etc.)
 
-### Scopes
+### Common Scopes
 
 - `factorial`: Factorial implementations
 - `fibonacci`: Fibonacci implementations
@@ -97,6 +121,7 @@ We follow the [Conventional Commits](https://www.conventionalcommits.org/) speci
 - `cli`: Main CLI interface in `src/main.rs`
 - `bin`: Individual binary files
 - `tests`: Test code
+- `bench`: Benchmarking code
 - `ci`: CI configuration
 - `docs`: Documentation
 
@@ -110,6 +135,7 @@ feat(cli): add unified command-line interface
 test(fibonacci): add edge case tests
 docs(readme): update usage examples
 perf(fibonacci): optimize iterative calculation
+feat(bench): add criterion benchmarks for all algorithms
 ```
 
 ### Best Practices
