@@ -23,7 +23,7 @@ use std::process;
 /// # Examples
 ///
 /// ```no_run
-/// use rust_xp_rs::parse_single_arg;
+/// use rust_xp::parse_single_arg;
 /// let n = parse_single_arg("5");
 /// ```
 pub fn parse_single_arg(example_value: &str) -> u64 {
@@ -60,7 +60,7 @@ pub fn parse_single_arg(example_value: &str) -> u64 {
 /// # Examples
 ///
 /// ```
-/// use rust_xp_rs::factorial_iterative;
+/// use rust_xp::factorial_iterative;
 /// assert_eq!(factorial_iterative(0), 1);
 /// assert_eq!(factorial_iterative(1), 1);
 /// assert_eq!(factorial_iterative(5), 120);
@@ -96,7 +96,7 @@ pub fn factorial_iterative(n: u64) -> u64 {
 /// # Examples
 ///
 /// ```
-/// use rust_xp_rs::factorial_recursive;
+/// use rust_xp::factorial_recursive;
 /// assert_eq!(factorial_recursive(0), 1);
 /// assert_eq!(factorial_recursive(1), 1);
 /// assert_eq!(factorial_recursive(5), 120);
@@ -126,7 +126,7 @@ pub fn factorial_recursive(n: u64) -> u64 {
 /// # Examples
 ///
 /// ```
-/// use rust_xp_rs::fibonacci_iterative;
+/// use rust_xp::fibonacci_iterative;
 /// assert_eq!(fibonacci_iterative(0), 0);
 /// assert_eq!(fibonacci_iterative(1), 1);
 /// assert_eq!(fibonacci_iterative(6), 8);
@@ -165,7 +165,7 @@ pub fn fibonacci_iterative(n: u64) -> u64 {
 /// # Examples
 ///
 /// ```
-/// use rust_xp_rs::fibonacci_recursive;
+/// use rust_xp::fibonacci_recursive;
 /// assert_eq!(fibonacci_recursive(0), 0);
 /// assert_eq!(fibonacci_recursive(1), 1);
 /// assert_eq!(fibonacci_recursive(6), 8);
@@ -195,7 +195,7 @@ pub fn fibonacci_recursive(n: u64) -> u64 {
 /// # Examples
 ///
 /// ```
-/// use rust_xp_rs::is_prime;
+/// use rust_xp::is_prime;
 /// assert_eq!(is_prime(0), false);
 /// assert_eq!(is_prime(1), false);
 /// assert_eq!(is_prime(2), true);

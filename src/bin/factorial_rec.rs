@@ -1,4 +1,4 @@
-use rust_xp_rs::{factorial_recursive, parse_single_arg};
+use rust_xp::{factorial_recursive, parse_single_arg};
 
 fn main() {
     let n = parse_single_arg("5");

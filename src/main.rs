@@ -1,4 +1,4 @@
-use rust_xp_rs::{factorial_iterative, factorial_recursive, fibonacci_iterative, fibonacci_recursive, is_prime};
+use rust_xp::{factorial_iterative, factorial_recursive, fibonacci_iterative, fibonacci_recursive, is_prime};
 use std::env;
 use std::process;
 

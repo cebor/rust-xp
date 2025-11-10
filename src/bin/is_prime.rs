@@ -1,4 +1,4 @@
-use rust_xp_rs::{is_prime, parse_single_arg};
+use rust_xp::{is_prime, parse_single_arg};
 
 fn main() {
     let n = parse_single_arg("17");
