@@ -26,6 +26,7 @@ use std::process;
 /// use rust_xp::parse_single_arg;
 /// let n = parse_single_arg("5");
 /// ```
+#[doc(hidden)]
 pub fn parse_single_arg(example_value: &str) -> u64 {
     let args: Vec<String> = env::args().collect();
 

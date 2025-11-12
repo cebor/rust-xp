@@ -23,6 +23,7 @@ build:
     - cargo build --release --verbose
   artifacts:
     paths:
+      - target/debug/
       - target/release/
     expire_in: 1 hour
 
