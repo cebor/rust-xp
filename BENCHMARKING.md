@@ -31,7 +31,7 @@ Benchmark results show:
 
 ```
 factorial_iterative/10  time:   [4.1558 ns 4.1732 ns 4.1923 ns]
-                              └─ min ─┘ └─ mean ┘ └─ max ──┘
+                                 └─ min ─┘ └─ mean ┘ └─ max ──┘
 ```
 
 ### HTML Reports
