@@ -93,13 +93,36 @@ cargo test --lib -- tests
 
 ### Code Coverage
 
+This project uses `cargo-llvm-cov` for code coverage analysis. Install it with:
+
 ```bash
-# Generate coverage report
+cargo install cargo-llvm-cov
+```
+
+Generate coverage reports:
+
+```bash
+# Generate coverage report (summary in terminal)
 cargo llvm-cov
 
-# Generate HTML coverage report
-cargo llvm-cov --html
+# Generate HTML coverage report (opens in browser)
+cargo llvm-cov --html --open
+
+# Generate detailed text report
+cargo llvm-cov --text
+
+# Generate coverage with specific output format
+cargo llvm-cov --lcov --output-path target/lcov.info
+
+# Clean coverage data
+cargo llvm-cov clean
 ```
+
+Coverage reports include:
+- Line coverage for all source files
+- Function coverage statistics
+- Branch coverage analysis
+- Detailed HTML reports in `target/llvm-cov/html/`
 
 ### Benchmarking
 
