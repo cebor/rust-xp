@@ -33,5 +33,10 @@ test:
   image: rust:latest
   dependencies:
     - build
+  before_script:
+    - cargo install cargo-llvm-cov
+    - rustc --version && cargo --version
   script:
-    - cargo test --release --verbose
+    - cargo test --verbose
+    - cargo llvm-cov --lib
+  coverage: '/TOTAL\s+(\d+\s+)+(\d+\.\d+\%)/'
